@@ -1,0 +1,40 @@
+{
+  "name": "Bajeezus",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "ava",
+    "watch": "ava --watch",
+    "coverage": "nyc ava"
+  },
+  "dependencies": {
+    "react": "15.1.0",
+    "react-native": "0.28.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-saga": "^0.10.5"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "enzyme": "^2.3.0",
+    "mockery": "^1.7.0",
+    "nyc": "^6.6.1",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-native-mock": "^0.2.3"
+  },
+  "ava": {
+    "babel": "inherit",
+    "files": [
+      "Tests/**/*.js",
+      "!Tests/Setup.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill",
+      "react-native-mock/mock",
+      "./Tests/Setup.js"
+    ]
+  }
+}
